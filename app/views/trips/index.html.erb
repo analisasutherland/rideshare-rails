@@ -1,0 +1,8 @@
+<h2> Trips!</h2>
+<ul class="Trip_List">
+  <%= @trips.each do |trip| %>
+  <li>
+    <%= link_to(trip.id, trip_path(trip)) %>
+  </li>
+  <% end %> 
+</ul>
