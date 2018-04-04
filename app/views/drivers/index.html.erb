@@ -1,6 +1,7 @@
 <h4>Drivers:</h4>
-
+  <%= paginate @drivers, outer_window: 3 %>
 <ul class="driver_list">
+
   <% @drivers.each do |driver| %>
   <li>
     ID:
