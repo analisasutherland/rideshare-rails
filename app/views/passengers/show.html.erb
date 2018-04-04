@@ -1,15 +1,28 @@
 <strong>Passenger Info:</strong>
 <section>
-Passenger ID:
-<%= @passenger[:id] %>
+  Passenger ID:
+  <%= @passenger[:id] %><br>
 
-Name:
-<%= @passenger[:name] %>
+  Name:
+  <%= @passenger[:name] %><br>
 
-Number:
-<%= @passenger[:phone_num]%>
-
+  Number:
+  <%= @passenger[:phone_num]%><br>
+</section><br>
+<section>
+  Trips Taken:
+<% @passenger.trips.each do |trip| %>
+<li>
+  <%= link_to(@passenger.trips, trip_path(trip)) %>
+</li>
 </section>
+<% end %>
+
 <button>
-<%= link_to( 'Edit Passenger', edit_passenger_path(@passenger)) %>
+  <%= link_to( 'Edit Passenger', edit_passenger_path(@passenger)) %>
+</button>
+<button>
+  <%= link_to 'Delete', passenger_path(@passenger),
+  method: :delete,
+  data: { confirm: 'Are you sure?' } %>
 </button>
