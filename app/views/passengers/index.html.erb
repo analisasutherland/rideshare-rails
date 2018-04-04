@@ -3,7 +3,7 @@
   <%= link_to( 'New Passenger', new_passenger_path(@passenger)) %>
 </button>
 <ul class="Trip_List">
-  <%= @passengers.each do |passenger| %>
+  <% @passengers.each do |passenger| %>
   <li>
     <%= link_to(passenger.id, passenger_path(passenger)) %>
 
