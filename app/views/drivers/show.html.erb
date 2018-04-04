@@ -13,11 +13,11 @@
 </button>
 
 <h4>Total Earnings:</h4>
-  <% sum = 0 %>
-  <% @driver.trips.each do |trip| %>
-  <% sum += (((trip.cost * 0.01) - 1.65)* 0.80) %>
-  <% end %>
-  <strong>$ <%= sum.round(2) %></strong>
+<% sum = 0 %>
+<% @driver.trips.each do |trip| %>
+<% sum += (((trip.cost * 0.01) - 1.65)* 0.80) %>
+<% end %>
+<strong>$ <%= sum.round(2) %></strong>
 
 
 <h4>Average Rating:</h4>
