@@ -14,7 +14,7 @@ class DriversController < ApplicationController
   end
 
   def edit
-    @driver = Book.find(params[:id])
+    @driver = Driver.find(params[:id])
   end
 
   def create
