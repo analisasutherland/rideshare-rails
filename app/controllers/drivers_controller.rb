@@ -5,12 +5,11 @@ class DriversController < ApplicationController
   end
 
   def new
-    @driver = Book.new
+    @driver = Driver.new
   end
 
   def show
-    driver_id = params[:id]
-    @drivers = Driver.find(driver_id)
+    @driver = Driver.find(params[:id])
   end
 
   def edit

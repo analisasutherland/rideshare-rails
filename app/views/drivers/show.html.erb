@@ -1,13 +1,31 @@
-<strong>Driver Details</strong>
-<p>Driver ID: <%= @drivers[:id] %></p>
-<p>Name: <%= @drivers[:name] %></p>
-<p>VIN: <%= @drivers[:vin] %></p>
+<h3>Driver Details</h3>
+<p>Driver ID: <%= @driver.id %></p>
+<p>Name: <%= @driver.name %></p>
+<p>VIN: <%= @driver.vin %></p>
 
 <button>
-  <%= link_to "Edit this driver", edit_driver_path(@drivers) %>
+  <%= link_to "Edit this driver", edit_driver_path(@driver) %>
 </button>
 
 <button>
-  <%= link_to('Delete this driver', driver_path(@drivers[:id]), method: :delete, data:
+  <%= link_to('Delete this driver', driver_path(@driver.id), method: :delete, data:
   {confirm: 'Are you sure you want to delete this driver?'}) %>
 </button>
+
+<h4>Trips:</h4>
+<ul>
+  <% @driver.trips.each do |trip| %>
+  <li>
+    Trip ID:
+    <%= link_to trip.id, trip_path(trip) %>
+    Date:
+    <%= trip.date %>
+    Passenger ID:
+    <%= trip.passenger_id %>
+    Rating:
+    <%= trip.rating %>
+    Cost: $
+    <%= (trip.cost * 0.01).round(2) %>
+  </li>
+  <% end %>
+</ul>
