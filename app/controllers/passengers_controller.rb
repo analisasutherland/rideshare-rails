@@ -7,6 +7,10 @@ class PassengersController < ApplicationController
     @passenger = Passenger.new
   end
 
+  def create
+
+  end
+
   def show
     passenger_id = params[:id]
     @passenger = Passenger.find(passenger_id)
