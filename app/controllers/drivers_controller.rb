@@ -21,6 +21,8 @@ class DriversController < ApplicationController
 
     if @driver.save
       redirect_to drivers_path
+    else
+      render :new
     end
   end
 
@@ -30,11 +32,17 @@ class DriversController < ApplicationController
 
     if @driver.save
       redirect_to driver_path(@driver)
+    else
+      render :update
     end
   end
 
   def destroy
     Driver.destroy(params[:id])
     redirect_to drivers_path
+  end
+
+  def driver_params
+    return params.require(:driver_id).permit(:name, :vin)
   end
 end
