@@ -8,5 +8,3 @@ class CreatePassengers < ActiveRecord::Migration[5.1]
     end
   end
 end
-
-# TODO: SET UP VIEWS

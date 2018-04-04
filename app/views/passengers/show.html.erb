@@ -1,0 +1,15 @@
+<strong>Passenger Info:</strong>
+<section>
+Passenger ID:
+<%= @passenger[:id] %>
+
+Name:
+<%= @passenger[:name] %>
+
+Number:
+<%= @passenger[:phone_num]%>
+
+</section>
+<button>
+<%= link_to( 'Edit Passenger', edit_passenger_path(@passenger)) %>
+</button>
