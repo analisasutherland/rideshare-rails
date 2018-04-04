@@ -1,6 +1,9 @@
-<h3>Edit Driver</h3>
+<h3>Edit Driver ID: <%= @driver.id %> </h3>
 
 <%= form_for @driver do |d| %>
+
+<%= d.label :driver %> 
+<%= d.hidden_field :id %>
 
 <%= d.label :name %>
 <%= d.text_field :name %>
