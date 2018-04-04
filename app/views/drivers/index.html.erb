@@ -1,5 +1,7 @@
 <h4>Drivers:</h4>
-  <%= paginate @drivers, outer_window: 3 %>
+<div>
+  <%= paginate @drivers, param_name: :pagina %>
+</div>
 <ul class="driver_list">
 
   <% @drivers.each do |driver| %>
