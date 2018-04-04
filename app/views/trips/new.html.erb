@@ -1,17 +1,17 @@
 <%= form_for @trip do |t| %>
 <div>
-  <%= t.label :id %>
-  <%= t.text_field :id %>
+  <%= t.label :trip_id %>
+  <%= t.text_field :trip_id %>
 </div>
 
 <div>
   <%= t.label :passenger %>
-  <%= t.text_field :passenger_id %>
+  <%= t.select :trip.passenger.name %>
 </div>
 
 <div>
   <%= t.label :driver %>
-  <%= t.text_field :driver_id %>
+  <%= t.text_field Driver.order("RANDOM()").first %>
 </div>
 
 <div>
@@ -23,5 +23,3 @@
   <%= t.label :cost %>
   <%= t.number_field :cost %>
 </div>
-<%= t.submit "Update" %>
-<% end %>

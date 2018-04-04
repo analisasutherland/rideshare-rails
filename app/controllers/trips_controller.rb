@@ -3,12 +3,12 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
-  def new
-    @trip = Trip.new
-  end
-
   def show
     trip_id = params[:id]
     @trip = Trip.find(trip_id)
+  end
+
+  def edit
+    @trip = Trip.find(params[:id])
   end
 end

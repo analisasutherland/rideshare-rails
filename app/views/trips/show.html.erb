@@ -9,5 +9,8 @@ Passenger:
 Rating:
 <%= @trip[:rating] %>
 Cost:
-<%= @trip[:cost] * 0.01 %>
+$<%= (@trip[:cost] * 0.01).round(2) %>
 </section>
+<button>
+<%= link_to( 'Edit Trip', edit_trip_path(@trip)) %>
+</button>
