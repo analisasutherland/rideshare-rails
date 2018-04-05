@@ -1,5 +1,7 @@
 class Trip < ApplicationRecord
-  # TODO: SET UP RELATIONSHIPS
   belongs_to :driver
   belongs_to :passenger
+
+  validates :passenger_id, presence: true
+  validates :driver_id, presence: true
 end
