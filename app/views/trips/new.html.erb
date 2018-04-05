@@ -7,21 +7,22 @@
 
 <div>
   <% unless @trip.passenger_id %>
-    <%= t.label :passenger %>
-    <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name]}%>
+  <%= t.label :passenger %>
+  <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name]}%>
   <% else %>
-    <%= t.hidden_field :passenger_id %>
+  <%= t.label :passenger_id %>
+  <%= t.text_field :passenger_id %>
   <% end %>
 </div>
 
 <div>
   <%= t.label :driver %>
-  <%= t.select :driver_id, Driver.all.select{|d| !drivers.include?(d)}.sample %>
+  <%= t.text_field :driver %>
 </div>
 
 <div>
- <%= t.label :rating %>
- <%= t.number_field :rating %>
+  <%= t.label :rating %>
+  <%= t.number_field :rating %>
 </div>
 
 <div>
