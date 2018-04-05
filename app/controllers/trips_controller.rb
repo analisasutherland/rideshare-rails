@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    @trips = Trip.all.order(:id).page params[:page]
   end
 
   def show
@@ -33,6 +33,11 @@ class TripsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    Trip.destroy(params[:id])
+    redirect_to trips_path
   end
 
   private

@@ -11,10 +11,19 @@
   <%= link_to(@trip.passenger.name, passenger_path(@trip.passenger)) %>
   Rating:
   <%= @trip[:rating] %>
-  Cost:
-  $<%= (@trip[:cost] * 0.01).round(2) %>
+  Cost: $
+  <% if @trip[:cost] == nil %>
+  <%=  @trip[:cost] = 0 %>
+  <% else %>
+  <%= (@trip[:cost] * 0.01).round(2) %>
+  <% end %>
 </section>
 
 <button>
   <%= link_to( 'Edit Trip', edit_trip_path(@trip)) %>
+</button>
+<button>
+  <%= link_to( 'Delete!', trip_path(@trip),
+  method: :delete,
+  data: { confirm: 'Are you sure?' }) %>
 </button>
