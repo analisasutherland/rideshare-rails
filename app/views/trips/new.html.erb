@@ -7,17 +7,17 @@
 
 <div>
   <% unless @trip.passenger_id %>
-  <%= t.label :passenger %>
-  <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name]}%>
+    <%= t.label :passenger %>
+    <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name] } %>
   <% else %>
-  <%= t.label :passenger_id %>
-  <%= t.text_field :passenger_id %>
+    <%= t.label :passenger %>
+    <%= t.text_field :passenger_id, readonly: true %>
   <% end %>
 </div>
 
 <div>
   <%= t.label :driver %>
-  <%= t.text_field :driver %>
+  <%= t.text_field :driver_id %>
 </div>
 
 <div>
