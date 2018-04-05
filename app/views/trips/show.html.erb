@@ -12,11 +12,7 @@
   Rating:
   <%= @trip[:rating] %>
   Cost: $
-  <% if @trip[:cost] == nil %>
-  <%=  @trip[:cost] = 0 %>
-  <% else %>
-  <%= (@trip[:cost] * 0.01).round(2) %>
-  <% end %>
+   <%= @trip[:cost] %>
 </section>
 
 <button>

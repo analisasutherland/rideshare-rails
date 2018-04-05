@@ -28,6 +28,12 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
 
+    if @trip[:cost] == ' '
+      @trip[:cost] = 0
+    else
+      (@trip[:cost] * 0.01)
+    end
+
     if @trip.save
       redirect_to trips_path
     else
