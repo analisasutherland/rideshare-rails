@@ -16,7 +16,7 @@
 
 <div>
   <%= t.label :driver %>
-  <%= t.text_field :driver_id, Driver.all.rand.first %>
+  <%= t.select :driver_id, Driver.all.select{|d| !drivers.include?(d)}.sample %>
 </div>
 
 <div>

@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :passengers do
     resources :trips, only: [:index, :new]
   end
+  # get '/passengers/:passenger_id/trips/new', to: 'trips#new', as: 'new_passenger_trip'
   resources :trips
 end
-
-# new_author_book GET    /authors/:author_id/books/new(.:format) books#new
