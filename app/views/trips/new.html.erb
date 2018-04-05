@@ -1,11 +1,6 @@
 <%= form_for @trip do |t| %>
 
 <div>
-  <%= t.label :trip_id %>
-  <%= t.text_field :id %>
-</div>
-
-<div>
   <% unless @trip.passenger_id %>
     <%= t.label :passenger %>
     <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name] } %>
