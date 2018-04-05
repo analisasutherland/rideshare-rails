@@ -22,8 +22,8 @@ class Driver < ApplicationRecord
     return (total / count).round(2)
   end
 
-  # def get_random_driver
-  #   driver = self.order("RAND()").first
-  #   return driver.id
-  # end
+  def self.get_random_driver
+    driver = Driver.all.sample
+    return driver.id
+  end
 end

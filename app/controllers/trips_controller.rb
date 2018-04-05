@@ -22,6 +22,7 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new(passenger_id: params[:passenger_id])
+    @trip.driver_id = Driver.get_random_driver
   end
 
   def create
