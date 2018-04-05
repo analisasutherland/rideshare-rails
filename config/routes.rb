@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'trips#index'
 
   resources :drivers
-  resources :passengers
+  resources :passengers do
+    resources :trips, only: [:index, :new]
+  end
+  # get '/passengers/:passenger_id/trips/new', to: 'trips#new', as: 'new_passenger_trip'
   resources :trips
 end

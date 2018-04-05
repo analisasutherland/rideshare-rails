@@ -1,17 +1,22 @@
 <%= form_for @trip do |t| %>
+
 <div>
   <%= t.label :trip_id %>
-  <%= t.text_field :trip_id %>
+  <%= t.text_field :id %>
 </div>
 
 <div>
-  <%= t.label :passenger %>
-  <%= t.select :trip.passenger.name %>
+  <% unless @trip.passenger_id %>
+    <%= t.label :passenger %>
+    <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name]}%>
+  <% else %>
+    <%= t.hidden_field :passenger_id %>
+  <% end %>
 </div>
 
 <div>
   <%= t.label :driver %>
-  <%= t.text_field Driver.order("RANDOM()").first %>
+  <%= t.select :driver_id, Driver.all.select{|d| !drivers.include?(d)}.sample %>
 </div>
 
 <div>
@@ -23,3 +28,9 @@
   <%= t.label :cost %>
   <%= t.number_field :cost %>
 </div>
+
+<div>
+  <%= t.submit "Start Trip!" %>
+</div>
+
+<% end %>

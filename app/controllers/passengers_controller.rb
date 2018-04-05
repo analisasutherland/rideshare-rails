@@ -1,10 +1,21 @@
 class PassengersController < ApplicationController
+
   def index
-    @passengers = Passenger.all.order(:name).page params[:page]
+    if params[:passenger_id]
+      passenger = Passenger.find_by(id: passenger_id)
+      @trips = passenger.trips
+    else
+      @passengers = Passenger.all.order(:name).page params[:page]
+    end
   end
 
   def new
+    if params[:passenger_id]
+      passenger = Passenger.find_by(id: passenger_id)
+      @trips = passenger.trips.new
+    else
     @passenger = Passenger.new
+    end
   end
 
   def create
