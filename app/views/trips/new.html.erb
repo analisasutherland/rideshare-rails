@@ -8,15 +8,16 @@
 <div>
   <% unless @trip.passenger_id %>
     <%= t.label :passenger %>
-    <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name]}%>
+    <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name] } %>
   <% else %>
-    <%= t.hidden_field :passenger_id %>
+    <%= t.label :passenger %>
+    <%= t.text_field :passenger_id, readonly: true %>
   <% end %>
 </div>
 
 <div>
   <%= t.label :driver %>
-  <%= t.select :driver_id, Driver.all.select{|d| !drivers.include?(d)}.sample %>
+  <%= t.text_field :driver_id %>
 </div>
 
 <div>

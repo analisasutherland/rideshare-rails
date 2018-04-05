@@ -10,12 +10,12 @@ class PassengersController < ApplicationController
   end
 
   def new
-    if params[:passenger_id]
-      passenger = Passenger.find_by(id: passenger_id)
-      @trips = passenger.trips.new
-    else
+    # if params[:passenger_id]
+    #   passenger = Passenger.find_by(id: passenger_id)
+    #   @trips = passenger.trips.new
+    # else
     @passenger = Passenger.new
-    end
+    # end
   end
 
   def create
