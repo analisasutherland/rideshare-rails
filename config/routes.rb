@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root 'trips#index'
 
   resources :drivers
-  resources :passengers
+  resources :passengers do
+    resources :trips, only: [:index, :new]
+  end
   resources :trips
 end
+
+# new_author_book GET    /authors/:author_id/books/new(.:format) books#new
