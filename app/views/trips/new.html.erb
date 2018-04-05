@@ -1,6 +1,10 @@
 <% render partial: "layouts/error_messages", locals: {model: @trip } %>
 
 <%= form_for @trip do |t| %>
+<div>
+  <%= t.label :date %>
+  <%= t.date_field :date %>
+</div>
 
 <div>
   <% unless @trip.passenger_id %>
@@ -24,7 +28,7 @@
 
 <div>
   <%= t.label :cost %>
-  <%= t.number_field :cost %>
+  <%= t.number_field :cost, readonly: true %>
 </div>
 
 <div>
