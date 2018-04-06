@@ -33,13 +33,14 @@ class DriversController < ApplicationController
     if @driver.save
       redirect_to driver_path(@driver)
     else
-      render :update
+      render :edit
     end
   end
 
   def destroy
     Driver.destroy(params[:id])
     redirect_to drivers_path
+    flash[:alert] = "Driver deleted"
   end
 
   def driver_params

@@ -18,6 +18,8 @@ class TripsController < ApplicationController
     trip.assign_attributes(trip_params)
     if trip.save
       redirect_to trip_path(trip)
+    else
+      render :edit
     end
   end
 
@@ -41,6 +43,7 @@ class TripsController < ApplicationController
   def destroy
     Trip.destroy(params[:id])
     redirect_to trips_path
+    flash[:alert] = "Trip deleted"
   end
 
   private
