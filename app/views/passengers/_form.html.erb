@@ -1,0 +1,8 @@
+<h2><%= page_title %></h2>
+<%= form_for @passenger do |p| %>
+  <%= p.label :name %>
+  <%= p.text_field :name %>
+  <%= p.label :phone_number %>
+  <%= p.text_field :phone_num %>
+  <%= p.submit submit %>
+<% end %>

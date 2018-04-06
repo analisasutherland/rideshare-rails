@@ -34,6 +34,9 @@ class PassengersController < ApplicationController
 
   def edit
     @passenger = Passenger.find(params[:id])
+    if @passenger.save
+      redirect_to @passenger
+    end
   end
 
   def update

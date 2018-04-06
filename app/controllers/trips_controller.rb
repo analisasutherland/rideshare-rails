@@ -14,10 +14,10 @@ class TripsController < ApplicationController
   end
 
   def update
-    trip = Trip.find(params[:id])
-    trip.assign_attributes(trip_params)
-    if trip.save
-      redirect_to trip_path(trip)
+    @trip = Trip.find(params[:id])
+    @trip.assign_attributes(trip_params)
+    if @trip.save
+      redirect_to trip_path(@trip)
     else
       render :edit
     end
