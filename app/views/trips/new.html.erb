@@ -8,11 +8,11 @@
 
 <div>
   <% unless @trip.passenger_id %>
-    <%= t.label :passenger %>
-    <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name] } %>
+  <%= t.label :passenger %>
+  <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name] } %>
   <% else %>
-    <%= t.label :passenger %>
-    <%= t.text_field :passenger_id, readonly: true %>
+  <%= t.label :passenger %>
+  <%= t.text_field :passenger_id, readonly: true %>
   <% end %>
 </div>
 
