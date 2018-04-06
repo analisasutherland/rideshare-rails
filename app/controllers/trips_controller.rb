@@ -1,7 +1,29 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = Trip.all.order(:id).page params[:page]
+    if params[:passenger_id]
+      @passenger = Passenger.find(params[:passenger_id])
+      @trips = @passenger.trips
+    else
+      @trips = Trip.all.order(:id).page params[:page]
+    end
+  end
+
+  def new
+    @trip = Trip.new(passenger_id: params[:passenger_id])
+    @trip.driver_id = Driver.get_random_driver
+  end
+
+  def create
+    @trip = Trip.new(trip_params)
+
+    @trip[:cost] = @trip.trip_cost_dollars
+
+    if @trip.save
+      redirect_to trips_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -20,23 +42,6 @@ class TripsController < ApplicationController
       redirect_to trip_path(@trip)
     else
       render :edit
-    end
-  end
-
-  def new
-    @trip = Trip.new(passenger_id: params[:passenger_id])
-    @trip.driver_id = Driver.get_random_driver
-  end
-
-  def create
-    @trip = Trip.new(trip_params)
-
-    @trip[:cost] = @trip.trip_cost_dollars
-
-    if @trip.save
-      redirect_to trips_path
-    else
-      render :new
     end
   end
 

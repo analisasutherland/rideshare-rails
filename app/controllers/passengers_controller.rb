@@ -1,21 +1,16 @@
 class PassengersController < ApplicationController
 
   def index
-    if params[:passenger_id]
-      passenger = Passenger.find_by(id: passenger_id)
-      @trips = passenger.trips
-    else
       @passengers = Passenger.all.order(:name).page params[:page]
-    end
   end
 
   def new
-    if params[:passenger_id]
-      passenger = Passenger.find_by(id: passenger_id)
-      @trips = passenger.trips.new
-    else
+    # if params[:passenger_id]
+    #   passenger = Passenger.find_by(id: passenger_id)
+    #   @trips = passenger.trips.new
+    # else
       @passenger = Passenger.new
-    end
+    # end
   end
 
   def create
@@ -28,8 +23,7 @@ class PassengersController < ApplicationController
   end
 
   def show
-    passenger_id = params[:id]
-    @passenger = Passenger.find(passenger_id)
+    @passenger = Passenger.find(params[:id])
   end
 
   def edit
@@ -51,9 +45,7 @@ class PassengersController < ApplicationController
 
   def destroy
     @passenger = Passenger.find(params[:id])
-
     @passenger.destroy
-
     redirect_to '/passengers'
     flash[:alert] = "Passenger deleted"
   end

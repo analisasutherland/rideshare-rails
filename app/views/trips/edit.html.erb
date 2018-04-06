@@ -10,6 +10,6 @@
   <%= t.label :rating %>
   <%= t.number_field :rating, in: 0..5 %>
   <%= t.label :cost %>
-  <%= t.number_field :cost %>
+  <%= t.number_field :cost, readonly: true  %>
   <%= t.submit "Update" %>
 <% end %>
