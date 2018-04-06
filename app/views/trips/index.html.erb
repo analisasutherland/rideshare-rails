@@ -25,7 +25,7 @@
     <li>
       <% if trip.rating == nil %>
         <button>
-          <%= link_to( 'Rate Trip!', edit_trip_path(trip.passenger)) %>
+          <%= link_to( 'Rate Trip!', edit_trip_path(trip)) %>
         </button>
       <% else %>
         <%= trip.rating %>

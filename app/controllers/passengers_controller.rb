@@ -5,12 +5,12 @@ class PassengersController < ApplicationController
   end
 
   def new
-    # if params[:passenger_id]
-    #   passenger = Passenger.find_by(id: passenger_id)
-    #   @trips = passenger.trips.new
-    # else
+    if params[:passenger_id]
+      passenger = Passenger.find_by(id: passenger_id)
+      @trips = passenger.trips.new
+    else
       @passenger = Passenger.new
-    # end
+    end
   end
 
   def create
@@ -36,6 +36,7 @@ class PassengersController < ApplicationController
   def update
     @passenger = Passenger.find(params[:id])
     @passenger.assign_attributes(passenger_params)
+
     if @passenger.save
       redirect_to passenger_path(@passenger)
     else
