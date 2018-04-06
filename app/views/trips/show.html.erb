@@ -1,6 +1,6 @@
 <h2>Details of the Trip:</h2>
 
-<section>
+<section class="details">
   <ul>
     <li>Trip ID: <%= @trip[:id] %></li>
     <li>Date: <%= @trip[:date] %></li>
@@ -11,11 +11,13 @@
   </ul>
 </section>
 
-<button>
-  <%= link_to( 'Edit Trip', edit_trip_path(@trip)) %>
-</button>
-<button>
-  <%= link_to( 'Delete!', trip_path(@trip),
-  method: :delete,
-  data: { confirm: 'Are you sure?' }) %>
-</button>
+<section class="buttons">
+  <button>
+    <%= link_to( 'Edit Trip', edit_trip_path(@trip)) %>
+  </button>
+  <button>
+    <%= link_to( 'Delete!', trip_path(@trip),
+    method: :delete,
+    data: { confirm: 'Are you sure?' }) %>
+  </button>
+</section>

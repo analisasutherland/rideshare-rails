@@ -23,3 +23,32 @@
   margin-left: 15%;
   margin-right: 15%;
 }
+
+.summary ul {
+  list-style-type: none;
+}
+
+.summary p {
+  background-color:rgb(246, 245, 155);
+  margin-right: 80%;
+}
+
+.pass_title ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.pass_table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  list-style-type: none;
+}
+
+.pass_table li {
+  align-items: center;
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
+  padding: 10px;
+
+}
