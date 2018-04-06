@@ -1,6 +1,6 @@
 class Passenger < ApplicationRecord
   # TODO: SET UP RELATIONSHIPS
-  has_many :trips
+  has_many :trips, :dependent => :destroy
 
   validates :name, presence: true
   validates :phone_num, presence: true
@@ -14,5 +14,5 @@ class Passenger < ApplicationRecord
       end
     return total_sum * 0.01
   end
-  
+
 end
