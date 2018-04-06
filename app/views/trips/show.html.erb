@@ -1,18 +1,14 @@
 <h3>Details of the Trip:</h3>
 
 <section>
-  Trip ID:
-  <%= @trip[:id] %>
-  Date:
-  <%= @trip[:date] %>
-  Driver:
-  <%= link_to(@trip.driver.name, driver_path(@trip.driver)) %>
-  Passenger:
-  <%= link_to(@trip.passenger.name, passenger_path(@trip.passenger)) %>
-  Rating:
-  <%= @trip[:rating] %>
-  Cost: $
-   <%= @trip[:cost] %>
+  <ul>
+  <li>Trip ID: <%= @trip[:id] %></li>
+  <li>Date: <%= @trip[:date] %></li>
+  <li>Driver: <%= link_to(@trip.driver.name, driver_path(@trip.driver)) %></li>
+  <li>Passenger: <%= link_to(@trip.passenger.name, passenger_path(@trip.passenger)) %></li>
+  <li>Rating: <%= @trip[:rating] %></li>
+  <li>Cost: $ <%= (@trip[:cost] * 0.01).round(2) %></li>
+   </ul>
 </section>
 
 <button>
