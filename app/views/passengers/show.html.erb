@@ -6,25 +6,25 @@
 
   Name:
   <%= @passenger[:name] %><br>
-
+  
   Number:
   <%= @passenger[:phone_num]%><br>
 </section><br>
-<section>
 
+<section class="pass_taken_trips">
   Trips Taken:
   <% @passenger.trips.each do |trip| %>
   <li>
     <%= link_to("Trip: #{trip.id}", trip_path(trip)) %>
 
     <% if trip.rating == nil %>
-      <button>
-        <%= link_to( 'Rate Trip!', edit_trip_path(@passenger)) %>
-      </button>
+    <button>
+      <%= link_to( 'Rate Trip!', edit_trip_path(@passenger)) %>
+    </button>
     <% end %>
   </li>
+  <% end %>
 </section><br>
-<% end %>
 
 <section>
   Total Spent:
