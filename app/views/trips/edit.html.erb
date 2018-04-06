@@ -1,29 +1,15 @@
 <% render partial: "layouts/error_messages", locals: {model: @trip } %>
 
 <%= form_for @trip do |t| %>
-<div>
   <%= t.label :id %>
   <%= t.text_field :id %>
-</div>
-
-<div>
   <%= t.label :passenger %>
   <%= t.text_field :passenger_id %>
-</div>
-
-<div>
   <%= t.label :driver %>
   <%= t.text_field :driver_id %>
-</div>
-
-<div>
   <%= t.label :rating %>
   <%= t.number_field :rating, in: 0..5 %>
-</div>
-
-<div>
   <%= t.label :cost %>
   <%= t.number_field :cost %>
-</div>
-<%= t.submit "Update" %>
+  <%= t.submit "Update" %>
 <% end %>

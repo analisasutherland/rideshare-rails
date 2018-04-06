@@ -1,16 +1,10 @@
 <% render partial: "layouts/error_messages", locals: {model: @passenger } %>
 
+<h2>New Passenger</h2>
 <%= form_for @passenger do |p| %>
-<div>
   <%= p.label :name %>
   <%= p.text_field :name %>
-</div>
-
-<div>
   <%= p.label :Phone_Number %>
   <%= p.text_field :phone_num %>
-</div>
-<button>
-<%= p.submit "Create Passenger!" %>
-</button>
+  <%= p.submit "Create Passenger!" %>
 <% end %>

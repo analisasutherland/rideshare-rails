@@ -2,12 +2,8 @@
 
 <section class="trip_form">
   <%= form_for @trip do |t| %>
-  <div>
     <%= t.label :date %>
     <%= t.date_field :date %>
-  </div>
-
-  <div>
     <% unless @trip.passenger_id %>
     <%= t.label :passenger %>
     <%= t.select :passenger_id, Passenger.all.map{ |pass| [pass.id, pass.name] } %>
@@ -15,26 +11,13 @@
     <%= t.label :passenger %>
     <%= t.text_field :passenger_id, readonly: true %>
     <% end %>
-  </div>
 
-  <div>
     <%= t.label :driver %>
     <%= t.text_field :driver_id %>
-  </div>
-
-  <div>
     <%= t.label :rating %>
     <%= t.number_field :rating %>
-  </div>
-
-  <div>
     <%= t.label :cost %>
     <%= t.number_field :cost, readonly: true %>
-  </div>
-
-  <div>
     <%= t.submit "Start Trip!" %>
-  </div>
-
   <% end %>
 </section>

@@ -12,16 +12,17 @@
 }
 
 
-.driver_list li {
+.driver_list ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  list-style-type: none;
-  text-align: center;
-  border: 1px solid lightgrey;
-  border-collapse: collapse;
-  padding: 10px;
   margin-left: 15%;
   margin-right: 15%;
+}
+
+.driver_list ul li {
+  list-style-type: none;
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
 }
 
 .summary ul {

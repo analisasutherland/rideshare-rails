@@ -6,23 +6,23 @@
 .passenger_title > ul {
   display: grid;
   list-style-type: none;
-  grid-template-columns: 1fr 2fr;
-  margin-left: 30%;
-  margin-right: 30%;
-  text-align: justify;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
 }
 
-
-.passenger_list li {
+.passenger_list ul {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr 1fr;
   list-style-type: none;
-  text-align: justify;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.passenger_list ul > li {
   border: 1px solid lightgrey;
   border-collapse: collapse;
-  padding: 2px;
-  margin-left: 30%;
-  margin-right: 30%;
 }
 
 .pass_taken_trips > li {

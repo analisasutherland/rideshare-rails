@@ -2,17 +2,9 @@
 
 <h2>New Driver</h2>
 <%= form_for @driver do |d| %>
-<div>
   <%= d.label :name %>
   <%= d.text_field :name %>
-</div>
-
-<div>
   <%= d.label :vin %>
   <%= d.text_field :vin %>
-</div>
-
-<div>
   <%= d.submit "Add Driver!" %>
-</div>
 <% end %>

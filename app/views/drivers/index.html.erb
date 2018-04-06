@@ -12,13 +12,12 @@
   </ul>
 </div>
 
-<ul class="driver_list">
-
+<div class="driver_list">
+<ul>
   <% @drivers.each do |driver| %>
-  <li>
-    <%= driver.id %>
-    <%= link_to(driver.name, driver_path(driver) ) %>
-    <div class="button">
+  <li><%= driver.id %></li>
+  <li><%= link_to(driver.name, driver_path(driver) ) %></li>
+    <li class="button">
       <button>
         <%= link_to('Edit', edit_driver_path(driver)) %>
       </button>
@@ -26,7 +25,7 @@
         <%= link_to('Delete', driver_path(driver.id), method: :delete, data:
         {confirm: "Are you sure you what to delete this driver?"}) %>
       </button>
-    </div>
   </li>
   <% end %>
 </ul>
+</div>

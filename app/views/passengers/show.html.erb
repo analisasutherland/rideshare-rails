@@ -6,7 +6,7 @@
 
   Name:
   <%= @passenger[:name] %><br>
-  
+
   Number:
   <%= @passenger[:phone_num]%><br>
 </section><br>
@@ -29,18 +29,17 @@
 <section>
   Total Spent:
   $<%= @passenger.total_spent.round(2) %>
+  <button>
+    <%= link_to( 'Edit Passenger', edit_passenger_path(@passenger)) %>
+  </button>
+
+  <button>
+    <%= link_to 'Delete', passenger_path(@passenger),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+  </button>
+
+  <button>
+    <%= link_to('New Trip', new_passenger_trip_path(@passenger)) %>
+  </button>
 </section>
-
-<button>
-  <%= link_to( 'Edit Passenger', edit_passenger_path(@passenger)) %>
-</button>
-
-<button>
-  <%= link_to 'Delete', passenger_path(@passenger),
-  method: :delete,
-  data: { confirm: 'Are you sure?' } %>
-</button>
-
-<button>
-  <%= link_to('New Trip', new_passenger_trip_path(@passenger)) %>
-</button>
