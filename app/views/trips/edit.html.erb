@@ -17,8 +17,8 @@
 </div>
 
 <div>
- <%= t.label :rating %>
- <%= t.number_field :rating %>
+  <%= t.label :rating %>
+  <%= t.number_field :rating, in: 0..5 %>
 </div>
 
 <div>
