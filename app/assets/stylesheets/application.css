@@ -13,20 +13,36 @@
  *= require_tree .
  *= require_self
  */
-header {
-  background-color: rgb(195, 170, 236);
+.head {
+  text-align: center;
+  background-color: rgb(198, 194, 214);
+  position: sticky;
   border-radius: 2%;
-  display: flex;
+  border: 1px groove;
 }
 
-body link {
-  text-decoration: none;
+.head ul li {
+  padding: 1%;
+  display: inline-flex;
+  flex-direction: row;
+  flex-flow: wrap;
 }
 
-ul li {
+a:link {
   list-style-type: none;
+  text-decoration: none;
+  color: rgb(20, 8, 41);
 }
 
-header ul li {
-  padding: 2%;
+.full_page {
+  text-decoration: none;
+  font-family: 'Monda', sans-serif;
+}
+
+a:visited {
+  color: rgb(20, 8, 41);
+}
+
+a:hover {
+  color: goldenrod;
 }

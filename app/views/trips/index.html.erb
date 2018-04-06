@@ -4,13 +4,26 @@
 <%= paginate @trips %>
 </div>
 
-<ul class="Trip_List">
+<section class="title">
+  <ul>
+    <li>Trip ID</li>
+    <li>Date</li>
+    <li>Driver</li>
+    <li>Passenger</li>
+    <li>Rating</li>
+  </ul>
+</section>
+
+<section class="block">
+<ul class="table">
   <% @trips.each do |trip| %>
-  <li>
-    ID:
-    <%= link_to(trip.id, trip_path(trip)) %>
-    Date:
-    <%= trip.date %>
+
+    <li><%= link_to(trip.id, trip_path(trip)) %></li>
+    <li><%= trip.date %></li>
+    <li><%= link_to(trip.driver.name, driver_path(trip.driver)) %></li>
+    <li><%= link_to(trip.passenger.name, passenger_path(trip.passenger)) %></li>
+    <li><%= trip.rating %></li>
   </li>
   <% end %>
 </ul>
+</section>
