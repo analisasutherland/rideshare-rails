@@ -2,26 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div {
-  text-align: center;
-  font-size: 1em;
-}
 .title ul {
   list-style-type: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
 }
 
 .table {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
   list-style-type: none;
-  align-items: center;
 }
 
 .table li {
+  align-items: center;
+  border: 1px solid lightgrey;
   border-collapse: collapse;
-  border: 1px solid grey;
   padding: 10px;
 
 }

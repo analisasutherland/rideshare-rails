@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.full_page {
+   text-decoration: none;
+   font-family: 'Monda', sans-serif;
+   list-style-type: none;
+ }
+
 .head {
   text-align: center;
   background-color: rgb(198, 194, 214);
@@ -31,18 +38,26 @@
 a:link {
   list-style-type: none;
   text-decoration: none;
-  color: rgb(20, 8, 41);
-}
-
-.full_page {
-  text-decoration: none;
-  font-family: 'Monda', sans-serif;
+  color: rgb(96, 47, 108);
 }
 
 a:visited {
-  color: rgb(20, 8, 41);
+  color: rgb(96, 47, 108);
 }
 
 a:hover {
   color: goldenrod;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.5em;
+}
+
+.toggle {
+  text-align: center;
+  font-size: 1.5em;
+  color: rgb(91, 22, 115);
+  margin: 10px;
 }

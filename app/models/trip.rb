@@ -6,7 +6,7 @@ class Trip < ApplicationRecord
   validates :driver_id, presence: true
 
   def trip_cost_dollars
-    if self.cost == ' '
+    if self.cost == nil
       return (self.cost = 0)
     else
       return (self.cost * 0.01)

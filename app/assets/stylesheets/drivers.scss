@@ -1,3 +1,25 @@
 // Place all the styles related to the Drivers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.driver_title > ul {
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+}
+
+
+.driver_list li {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
+  text-align: center;
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
+  padding: 10px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
