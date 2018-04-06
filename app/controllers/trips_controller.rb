@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+
   def index
     @trips = Trip.all.order(:id).page params[:page]
   end
@@ -28,11 +29,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
 
-    if @trip[:cost] == ' '
-      @trip[:cost] = 0
-    else
-      (@trip[:cost] * 0.01)
-    end
+    @trip[:cost] = @trip.trip_cost_dollars
 
     if @trip.save
       redirect_to trips_path

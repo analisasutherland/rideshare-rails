@@ -5,12 +5,13 @@ class Trip < ApplicationRecord
   validates :passenger_id, presence: true
   validates :driver_id, presence: true
 
-  # def rate_trip
-  #   unrated_trips = self.trips.where(rating: " ")
-  #   if unrated_trips.length == 0
-  #     return nil
-  #   end
-  # end
+  def trip_cost_dollars
+    if self.cost == ' '
+      return (self.cost = 0)
+    else
+      return (self.cost * 0.01)
+    end
+  end
 
-  
+
 end
