@@ -13,20 +13,51 @@
  *= require_tree .
  *= require_self
  */
-header {
-  background-color: rgb(195, 170, 236);
+
+.full_page {
+   text-decoration: none;
+   font-family: 'Monda', sans-serif;
+   list-style-type: none;
+ }
+
+.head {
+  text-align: center;
+  background-color: rgb(198, 194, 214);
+  position: sticky;
   border-radius: 2%;
-  display: flex;
+  border: 1px groove;
 }
 
-body link {
-  text-decoration: none;
+.head ul li {
+  padding: 1%;
+  display: inline-flex;
+  flex-direction: row;
+  flex-flow: wrap;
 }
 
-ul li {
+a:link {
   list-style-type: none;
+  text-decoration: none;
+  color: rgb(96, 47, 108);
 }
 
-header ul li {
-  padding: 2%;
+a:visited {
+  color: rgb(96, 47, 108);
+}
+
+a:hover {
+  color: goldenrod;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.5em;
+}
+
+.toggle {
+  text-align: center;
+  font-size: 1.5em;
+  color: rgb(91, 22, 115);
+  margin: 10px;
 }

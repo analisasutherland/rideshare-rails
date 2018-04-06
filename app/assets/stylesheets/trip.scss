@@ -1,3 +1,36 @@
 // Place all the styles related to the Trip controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
+  list-style-type: none;
+}
+
+.table li {
+  align-items: center;
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
+  padding: 10px;
+
+}
+
+.details ul {
+  list-style-type: none;
+}
+
+.trip_form {
+  margin-top: 2%;
+  text-align: justify;
+}
+
+.trip_form div {
+  padding: 2%;
+}

@@ -1,16 +1,37 @@
 <h2>Trips!</h2>
 
-<div>
+<div class="toggle">
   <%= paginate @trips %>
 </div>
 
-<ul class="Trip_List">
-  <% @trips.each do |trip| %>
-  <li>
-    ID:
-    <%= link_to(trip.id, trip_path(trip)) %>
-    Date:
-    <%= trip.date %>
-  </li>
-  <% end %>
-</ul>
+<section class="title">
+  <ul>
+    <li>Trip ID</li>
+    <li>Date</li>
+    <li>Driver</li>
+    <li>Passenger</li>
+    <li>Rating</li>
+    <li>(trip details)</li>
+  </ul>
+</section>
+
+<section>
+  <ul class="table">
+    <% @trips.each do |trip| %>
+
+    <li><%= link_to(trip.id, trip_path(trip)) %></li>
+    <li><%= trip.date %></li>
+    <li><%= link_to(trip.driver.name, driver_path(trip.driver)) %></li>
+    <li><%= link_to(trip.passenger.name, passenger_path(trip.passenger)) %></li>
+    <li>
+      <% if trip.rating == nil %>
+        <button>
+          <%= link_to( 'Rate Trip!', edit_trip_path(trip.passenger)) %>
+        </button>
+      <% else %>
+        <%= trip.rating %>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+</section>

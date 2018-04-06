@@ -1,21 +1,23 @@
-<h3>Details of the Trip:</h3>
+<h2>Details of the Trip:</h2>
 
-<section>
+<section class="details">
   <ul>
     <li>Trip ID: <%= @trip[:id] %></li>
     <li>Date: <%= @trip[:date] %></li>
     <li>Driver: <%= link_to(@trip.driver.name, driver_path(@trip.driver)) %></li>
     <li>Passenger: <%= link_to(@trip.passenger.name, passenger_path(@trip.passenger)) %></li>
     <li>Rating: <%= @trip[:rating] %></li>
-    <li>Cost: $ <%= (@trip[:cost] * 0.01).round(2) %></li>
+    <li>Cost: $ <%= (@trip.trip_cost_dollars.round(2)) %></li>
   </ul>
 </section>
 
-<button>
-  <%= link_to( 'Edit Trip', edit_trip_path(@trip)) %>
-</button>
-<button>
-  <%= link_to( 'Delete!', trip_path(@trip),
-  method: :delete,
-  data: { confirm: 'Are you sure?' }) %>
-</button>
+<section class="buttons">
+  <button>
+    <%= link_to( 'Edit Trip', edit_trip_path(@trip)) %>
+  </button>
+  <button>
+    <%= link_to( 'Delete!', trip_path(@trip),
+    method: :delete,
+    data: { confirm: 'Are you sure?' }) %>
+  </button>
+</section>

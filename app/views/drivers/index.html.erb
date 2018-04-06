@@ -1,22 +1,32 @@
-<h4>Drivers:</h4>
-<div>
+<h2>Drivers!</h2>
+
+<div class="toggle">
   <%= paginate @drivers, outer_window: 3 %>
 </div>
+
+<div class="driver_title">
+  <ul>
+    <li>ID</li>
+    <li>NAME</li>
+    <li>EDIT</li>
+  </ul>
+</div>
+
 <ul class="driver_list">
 
   <% @drivers.each do |driver| %>
   <li>
-    ID:
     <%= driver.id %>
-    NAME:
     <%= link_to(driver.name, driver_path(driver) ) %>
-    <button>
-      <%= link_to('Edit', edit_driver_path(driver) ) %>
-    </button>
-    <button>
-      <%= link_to('Delete', driver_path(driver.id), method: :delete, data:
-      {confirm: "Are you sure you what to delete this driver?"}) %>
-    </button>
+    <div class="button">
+      <button>
+        <%= link_to('Edit', edit_driver_path(driver)) %>
+      </button>
+      <button>
+        <%= link_to('Delete', driver_path(driver.id), method: :delete, data:
+        {confirm: "Are you sure you what to delete this driver?"}) %>
+      </button>
+    </div>
   </li>
   <% end %>
 </ul>

@@ -1,3 +1,32 @@
 // Place all the styles related to the Passengers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.passenger_title > ul {
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: 1fr 2fr;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: justify;
+}
+
+
+.passenger_list li {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  list-style-type: none;
+  text-align: justify;
+  border: 1px solid lightgrey;
+  border-collapse: collapse;
+  padding: 2px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.pass_taken_trips > li {
+background-color:rgb(246, 245, 155);
+padding: 1px;
+margin-right: 80%;
+}

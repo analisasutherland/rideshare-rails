@@ -1,4 +1,4 @@
-<h3>Driver Details</h3>
+<h2>Driver Details</h2>
 <p>Driver ID: <%= @driver.id %></p>
 <p>Name: <%= @driver.name %></p>
 <p>VIN: <%= @driver.vin %></p>
@@ -12,26 +12,30 @@
   {confirm: 'Are you sure you want to delete this driver?'}) %>
 </button>
 
-<h4>Total Earnings:</h4>
-<p>$ <%= @driver.total_earnings %></p>
+<section class="summary">
+  <p>Total Earnings: $ <%= @driver.total_earnings %></p>
 
-<h4>Average Rating:</h4>
-<p><%= @driver.average_rating %></p>
+  <p>Average Rating: <%= @driver.average_rating %></p>
 
-<h4>Trips:</h4>
-<ul>
-  <% @driver.trips.each do |trip| %>
-  <li>
-    Trip ID:
-    <%= link_to trip.id, trip_path(trip) %>
-    Date:
-    <%= trip.date %>
-    Passenger ID:
-    <%= trip.passenger_id %>
-    Rating:
-    <%= trip.rating %>
-    Cost: $
-    <%= (trip.cost * 0.01).round(2) %>
-  </li>
-  <% end %>
-</ul>
+  <h4>Trips:</h4>
+  <section class="pass_title">
+    <ul>
+      <li>Trip ID</li>
+      <li>Date</li>
+      <li>Passenger</li>
+      <li>Rating</li>
+      <li>Cost</li>
+      <li>(trip details)</li>
+    </ul>
+  </section>
+
+  <ul class="pass_table">
+    <% @driver.trips.each do |trip| %>
+    <li><%= link_to trip.id, trip_path(trip) %></li>
+    <li><%= trip.date %></li>
+    <li><%= trip.passenger_id %></li>
+    <li><%= trip.rating %></li>
+    <li>$ <%= trip.trip_cost_dollars.round(2) %></li>
+    <% end %>
+  </ul>
+</section>

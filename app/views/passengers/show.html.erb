@@ -1,4 +1,4 @@
-<strong>Passenger Info:</strong>
+<h2>Passenger Info:</h2>
 
 <section>
   Passenger ID:
@@ -6,12 +6,12 @@
 
   Name:
   <%= @passenger[:name] %><br>
-
+  
   Number:
   <%= @passenger[:phone_num]%><br>
 </section><br>
-<section>
 
+<section class="pass_taken_trips">
   Trips Taken:
   <% @passenger.trips.each do |trip| %>
   <li>
@@ -23,8 +23,8 @@
     </button>
     <% end %>
   </li>
+  <% end %>
 </section><br>
-<% end %>
 
 <section>
   Total Spent:
