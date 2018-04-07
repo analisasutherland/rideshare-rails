@@ -1,10 +1,3 @@
 <% render partial: "layouts/error_messages", locals: {model: @driver } %>
 
-<h2>New Driver</h2>
-<%= form_for @driver do |d| %>
-  <%= d.label :name %>
-  <%= d.text_field :name %>
-  <%= d.label :vin %>
-  <%= d.text_field :vin %>
-  <%= d.submit "Add Driver!" %>
-<% end %>
+<%= render partial: "form", locals: { page_title: "New Driver", submit: "Add Driver!"} %>

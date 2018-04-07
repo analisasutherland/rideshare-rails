@@ -1,0 +1,8 @@
+<h2><%= page_title %></h2>
+<%= form_for @driver do |d| %>
+  <%= d.label :name %>
+  <%= d.text_field :name %>
+  <%= d.label :vin %>
+  <%= d.text_field :vin %>
+  <%= d.submit submit %>
+<% end %>
