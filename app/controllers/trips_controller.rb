@@ -5,7 +5,7 @@ class TripsController < ApplicationController
       @passenger = Passenger.find(params[:passenger_id])
       @trips = @passenger.trips
     else
-      @trips = Trip.all.order(:id).page params[:page]
+      @trips = Trip.all.order(:date).page params[:page]
     end
   end
 
