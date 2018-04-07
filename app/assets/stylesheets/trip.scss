@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.home {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  text-align: center;
+}
 .title ul {
   list-style-type: none;
   display: grid;
